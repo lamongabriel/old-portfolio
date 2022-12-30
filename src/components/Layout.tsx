@@ -10,7 +10,7 @@ export function Layout ({children}: LayoutProps) {
     <>
       <Header />
       <main className="min-h-screen min-w-screen bg-green-background bg-fixed bg-cover bg-black pt-16">
-        <div className="min-h-screen w-full max-w-[1280px] px-4 mx-auto">
+        <div className="min-h-[calc(100vh_-_4rem)] w-full max-w-[1280px] px-4 mx-auto">
           {children}
         </div>
       </main>

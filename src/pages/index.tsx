@@ -1,3 +1,4 @@
+import { Box } from "../components/Box";
 import { Header } from "../components/Header";
 import { Heading } from "../components/Heading";
 import { HeadingGradient } from "../components/HeadingGradient";
@@ -16,9 +17,13 @@ export default function Home() {
             {'<lamongabriel/>'}
             </HeadingGradient>
           </div>
-          <div className="bg-[#151515] p-10 rounded-lg text-[#FAF9F6] shadow-lg">
-            sodjsaiodjisajdiosaj
-          </div>
+          <Box>
+            <HeadingGradient size="md">
+              Olá, como vai?
+            </HeadingGradient>
+
+            sdsd
+          </Box>
         </>
       </Layout>
     </>

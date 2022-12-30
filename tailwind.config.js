@@ -12,8 +12,10 @@ module.exports = {
         'sans': 'Montserrat'
       },
       colors: {
-        'primary-green': '#00b37e',
-        'primary-blue': '#3030ad'
+        'lg-primary-green': '#00b37e',
+        'lg-primary-blue': '#3030ad',
+        'lg-gray-500': '#151515',
+        'lg-white-500': '#FAF9F6'
       }
     },
   },

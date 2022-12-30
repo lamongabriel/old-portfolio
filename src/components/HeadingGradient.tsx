@@ -29,8 +29,8 @@ export function HeadingGradient ({ children, size }: HeadingGradientProps) {
       text-transparent
       bg-clip-text 
       bg-gradient-to-r
-      from-primary-green 
-      to-primary-blue
+      from-lg-primary-green 
+      to-lg-primary-blue
       leading-tight
       ${textSize}
     `}>
