@@ -25,6 +25,7 @@ export function HeadingGradient ({ children, size }: HeadingGradientProps) {
   return (
     <h2 className={`
       font-bold 
+      inline-block
       text-transparent
       bg-clip-text 
       bg-gradient-to-r
