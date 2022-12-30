@@ -1,7 +1,8 @@
-import { HTMLAttributes, ReactNode } from "react"
+import { ReactNode } from 'react'
 
-interface BoxProps extends HTMLAttributes<HTMLDivElement>{
+interface BoxProps {
   children: ReactNode
+  className?: string
 }
 
 export function Box ({ children }: BoxProps) {
