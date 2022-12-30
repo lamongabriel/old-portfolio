@@ -14,15 +14,15 @@ import { FaReact, FaJsSquare, FaNodeJs } from 'react-icons/fa'
 export default function Home () {
   return (
     <>
-      <Layout className="flex justify-between items-center gap-10">
+      <Layout className='flex flex-col gap-10 my-10 lg:flex-row lg:justify-between lg:items-center lg:my-0'>
 
-				<Fade className='flex-1 max-w-[460px]'>
+				<Fade className='lg:flex-1 lg:max-w-[480px]'>
 					<section>
 
 						<Image className="mb-10 rounded-full" src={profile} alt="Gabriel Lamon profile image" width={180} height={180}/>
 
 						<Heading className='text-lg'>Olá, eu sou</Heading>
-						<HeadingGradient className="text-5xl">{'<lamongabriel/>'}</HeadingGradient>
+						<HeadingGradient className="text-[clamp(1.5rem,10vw,3rem)]">{'<lamongabriel/>'}</HeadingGradient>
 
 						<Text className='mt-10 leading-relaxed'>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium, velit nec pulvinar ultricies, ante dui interdum risus, at placerat purus ipsum ac augue.
@@ -44,7 +44,7 @@ export default function Home () {
 					</section>
 				</Fade>
 
-				<Slide className='flex-1 max-w-[640px]' direction='right'>
+				<Slide className='lg:flex-1 lg:max-w-[620px]' direction='right'>
 					<section className="flex flex-col gap-4">
 						<Box>
 							<HeadingGradient>
