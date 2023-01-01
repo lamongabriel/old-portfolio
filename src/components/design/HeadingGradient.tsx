@@ -8,6 +8,7 @@ interface HeadingGradientProps {
 export function HeadingGradient ({ children, className }: HeadingGradientProps) {
   return (
     <h2 className={`
+			text-[clamp(1.5rem,10vw,3rem)]
       font-bold
       inline-block
       text-transparent

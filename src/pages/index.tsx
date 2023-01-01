@@ -22,7 +22,7 @@ export default function Home () {
 						<Image className="mb-10 rounded-full" src={profile} alt="Gabriel Lamon profile image" width={180} height={180}/>
 
 						<Heading className='text-lg'>Olá, eu sou</Heading>
-						<HeadingGradient className="text-[clamp(1.5rem,10vw,3rem)]">{'<lamongabriel/>'}</HeadingGradient>
+						<HeadingGradient >{'<lamongabriel/>'}</HeadingGradient>
 
 						<Text className='mt-10 leading-relaxed'>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium, velit nec pulvinar ultricies, ante dui interdum risus, at placerat purus ipsum ac augue.
