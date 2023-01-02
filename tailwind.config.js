@@ -9,7 +9,7 @@ module.exports = {
         'green-background': 'url(/images/green-background.png)'
       },
       fontFamily: {
-        sans: 'Montserrat'
+        sans: 'Montserrat, sans-serif'
       },
       colors: {
         'lg-primary-green': '#00b37e',

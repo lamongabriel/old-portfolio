@@ -25,7 +25,7 @@ export default function Home () {
 						<HeadingGradient >{'<lamongabriel/>'}</HeadingGradient>
 
 						<Text className='mt-10 leading-relaxed'>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium, velit nec pulvinar ultricies, ante dui interdum risus, at placerat purus ipsum ac augue.
+							Front-end engineer com 2+ anos de experiência. Desenvolvo aplicações de ponta, com foco em desempenho, estabilidade, segurança e estética.
 						</Text>
 
 						<svg width="0" height="0">

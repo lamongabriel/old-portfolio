@@ -17,6 +17,7 @@ export function Header () {
   const menu = useRef<HTMLUListElement>(null)
 
   const [menuOpen, setMenuOpen] = useState(false)
+  const [menuBackground, setMenuBackground] = useState(false)
 
   function handleToggleMenu () {
     setMenuOpen(prev => !prev)
@@ -27,14 +28,24 @@ export function Header () {
   }, [menuOpen])
 
   useEffect(() => {
-    function closeHeaderWhenClickOutside (e: MouseEvent) {
+    const onScroll = (e: Event) => {
+      const window = e.currentTarget as Window
 
+      if (window.scrollY === 0) {
+        return setMenuBackground(false)
+      }
+
+      setMenuBackground(true)
     }
-    window.addEventListener('click', closeHeaderWhenClickOutside)
+
+    window.addEventListener('scroll', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+    }
   }, [])
 
   return (
-    <header id='mainheader' className="fixed top-0 left-0 w-full h-16 flex px-4 z-10">
+    <header id='mainheader' className={`fixed top-0 left-0 w-full h-16 flex px-4 z-10 ${menuBackground ? 'lg:bg-lg-gray-500-transparent' : ''}`}>
       <nav className={
 				`
 					h-screen
@@ -68,7 +79,7 @@ export function Header () {
 				</button>
         <ul className='lg:flex lg:gap-4'>
           {menuItems.map((item, index) => (
-						<li key={index} className='mt-4'>
+						<li key={index} className='mt-4 lg:mt-0'>
 							<Link href={item.path} className={item.path === router.pathname ? styles['menu__item--active'] : styles.menu__item}>
 								{item.label}
 							</Link>
