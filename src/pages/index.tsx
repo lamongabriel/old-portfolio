@@ -32,7 +32,7 @@ export default function Home () {
 						<HeadingGradient >{'<lamongabriel/>'}</HeadingGradient>
 
 						<Text className='mt-10 leading-relaxed'>
-							Front-end engineer com 2+ anos de experiência. Desenvolvo aplicações de ponta, com foco em desempenho, estabilidade, segurança e estética.
+							Front-end engineer com 2+ anos de experiência, em constante evolução. Desenvolvo aplicações com foco em desempenho, estabilidade, segurança e estética.
 						</Text>
 
 						<svg width="0" height="0">
@@ -58,10 +58,10 @@ export default function Home () {
 								Construindo soluções.
 							</HeadingGradient>
 							<Text>
-								Com uma stack moderna, escalável e de fácil manutenção, desenvolvo diversos tipos de aplicações web, pensando sempre em solucionar de maneira rápida e eficaz o seu problema.
+								Com uma stack moderna, escalável e de fácil manutenção, desenvolvo diversos tipos de aplicações web, responsivas e acessíveis.
 							</Text>
 							<Text>
-								Utilizando React JS, crio aplicações responsivas, acessíveis e fluídas.
+								Tecnologia é minha forma de mudar o mundo, e utilizo React JS + Node JS como intermédio. Meu objetivo é facilitar a vidas das pessoas construindo soluções simples para problemas complexos.
 							</Text>
 						</Box>
 						<Box>
