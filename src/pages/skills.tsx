@@ -8,6 +8,7 @@ import { Tab } from '../components/design/Tabs/Tab'
 import { feTech } from '../utils/feTech'
 import { beTech } from '../utils/beTech'
 import { tools } from '../utils/tools'
+import { Chart } from '../components/Chart'
 
 export default function Skills () {
   const hoverCardClasses = `
@@ -44,6 +45,7 @@ export default function Skills () {
 			<Text>
 				Essas são as habilidades que desenvolvi ao longo de anos desenvolvendo soluções de programação todos os dias.
 			</Text>
+			<Chart />
 			<Tabs>
 				<Tab title='Front-end'>
 					<section className='flex gap-4 lg:gap-6 flex-wrap items-center'>
