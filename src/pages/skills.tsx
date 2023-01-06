@@ -9,6 +9,7 @@ import { feTech } from '../utils/feTech'
 import { beTech } from '../utils/beTech'
 import { tools } from '../utils/tools'
 import { Chart } from '../components/Chart'
+import Head from 'next/head'
 
 export default function Skills () {
   const hoverCardClasses = `
@@ -32,73 +33,90 @@ export default function Skills () {
 	`
 
   return (
-		<Layout>
-			<svg width="0" height="0">
-				<linearGradient id="blue-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
-					<stop stopColor="#00b37e" offset="0%" />
-					<stop stopColor="#6a6aff" offset="100%" />
-				</linearGradient>
-			</svg>
-			<HeadingGradient>
-				Skills
-			</HeadingGradient>
-			<Text>
-				Essas são as habilidades que desenvolvi ao longo de anos desenvolvendo soluções de programação todos os dias.
-			</Text>
-			<Chart />
-			<Tabs>
-				<Tab title='Front-end'>
-					<section className='flex gap-4 lg:gap-6 flex-wrap items-center'>
-						{feTech.map((el, index) => (
-							<a
-								title={el.text}
-								key={index}
-								href={el.link}
-								target='_blank'
-								className={`${hoverCardClasses} ${el.border ? 'border-[1px] border-lg-primary-green' : ''}`}
-							>
-								{<el.icon className='text-5xl md:text-7xl' style={{ fill: 'url(#blue-gradient)' }} />}
-								<Text className='font-bold text-center'>{el.text}</Text>
-							</a>
-						))}
-					</section>
-				</Tab>
-				<Tab title='Back-end'>
-					<section className='flex gap-4 lg:gap-6 flex-wrap items-center'>
-						{beTech.map((el, index) => (
-							<a
-								title={el.text}
-								key={index}
-								href={el.link}
-								target='_blank'
-								className={`${hoverCardClasses}`}
-							>
-								{<el.icon className='text-5xl md:text-7xl' style={{ fill: 'url(#blue-gradient)' }} />}
-								<Text className='font-bold text-center'>{el.text}</Text>
-							</a>
-						))}
-					</section>
-				</Tab>
-				<Tab title='Ferramentas'>
-					<section className='flex gap-4 lg:gap-6 flex-wrap items-center'>
-						{tools.map((el, index) => (
-							<a
-								title={el.text}
-								key={index}
-								href={el.link}
-								target='_blank'
-								className={`${hoverCardClasses}`}
-							>
-								{<el.icon className='text-5xl md:text-7xl' style={{ fill: 'url(#blue-gradient)' }} />}
-								<Text className='font-bold text-center'>{el.text}</Text>
-							</a>
-						))}
-					</section>
-				</Tab>
-			</Tabs>
-			<Text className='text-lg-primary-green'>
-				Tecnologias mais usadas
-			</Text>
-		</Layout>
+		<>
+			<Head>
+				<title>Skills | lamongabriel</title>
+
+				<meta
+					name="description"
+					content="Essas são as habilidades que desenvolvi ao longo de anos desenvolvendo soluções de programação todos os dias, confira!"
+				/>
+
+				<meta property="og:title" content="Skills | lamongabriel" />
+				<meta
+					property="og:description"
+					content="Essas são as habilidades que desenvolvi ao longo de anos desenvolvendo soluções de programação todos os dias, confira!"
+				/>
+				<meta property="og:image" content="/images/profile.png" />
+			</Head>
+			<Layout>
+				<svg width="0" height="0">
+					<linearGradient id="blue-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
+						<stop stopColor="#00b37e" offset="0%" />
+						<stop stopColor="#6a6aff" offset="100%" />
+					</linearGradient>
+				</svg>
+				<HeadingGradient>
+					Skills
+				</HeadingGradient>
+				<Text>
+					Essas são as habilidades que desenvolvi ao longo de anos desenvolvendo soluções de programação todos os dias.
+				</Text>
+				<Chart />
+				<Tabs>
+					<Tab title='Front-end'>
+						<section className='flex gap-4 lg:gap-6 flex-wrap items-center'>
+							{feTech.map((el, index) => (
+								<a
+									title={el.text}
+									key={index}
+									href={el.link}
+									target='_blank'
+									className={`${hoverCardClasses} ${el.border ? 'border-[1px] border-lg-primary-green' : ''}`}
+								>
+									{<el.icon className='text-5xl md:text-7xl' style={{ fill: 'url(#blue-gradient)' }} />}
+									<Text className='font-bold text-center'>{el.text}</Text>
+								</a>
+							))}
+						</section>
+					</Tab>
+					<Tab title='Back-end'>
+						<section className='flex gap-4 lg:gap-6 flex-wrap items-center'>
+							{beTech.map((el, index) => (
+								<a
+									title={el.text}
+									key={index}
+									href={el.link}
+									target='_blank'
+									className={`${hoverCardClasses}`}
+								>
+									{<el.icon className='text-5xl md:text-7xl' style={{ fill: 'url(#blue-gradient)' }} />}
+									<Text className='font-bold text-center'>{el.text}</Text>
+								</a>
+							))}
+						</section>
+					</Tab>
+					<Tab title='Ferramentas'>
+						<section className='flex gap-4 lg:gap-6 flex-wrap items-center'>
+							{tools.map((el, index) => (
+								<a
+									title={el.text}
+									key={index}
+									href={el.link}
+									target='_blank'
+									className={`${hoverCardClasses}`}
+								>
+									{<el.icon className='text-5xl md:text-7xl' style={{ fill: 'url(#blue-gradient)' }} />}
+									<Text className='font-bold text-center'>{el.text}</Text>
+								</a>
+							))}
+						</section>
+					</Tab>
+				</Tabs>
+				<Text className='text-lg-primary-green'>
+					Tecnologias mais usadas
+				</Text>
+			</Layout>
+		</>
   )
 }

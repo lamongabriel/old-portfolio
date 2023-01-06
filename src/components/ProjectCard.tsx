@@ -24,12 +24,12 @@ export function ProjectCard ({ title, image, children, github, link }: ProjectCa
 					{ children }
 				</Text>
 				<div className='flex mt-4 gap-4'>
-					{github && (
+					{link && (
 						<a href={link}>
 							<FaLink color='#fff' size={32} title='Link' />
 						</a>
 					)}
-					{link && (
+					{github && (
 						<a href={github}>
 							<FaGithub color='#fff' size={32} title='Github' />
 						</a>

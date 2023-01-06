@@ -10,10 +10,26 @@ import profile from '../assets/profile.png'
 import { Fade, Slide } from 'react-awesome-reveal'
 
 import { FaReact, FaJsSquare, FaNodeJs, FaWhatsapp, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import Head from 'next/head'
 
 export default function Home () {
   return (
     <>
+			<Head>
+				<title>Portfólio | lamongabriel</title>
+
+					<meta
+						name="description"
+						content="Bem vindo! conheça o meu portfólio."
+					/>
+
+					<meta property="og:title" content="Portfólio | lamongabriel" />
+					<meta
+						property="og:description"
+						content="Bem vindo! conheça o meu portfólio."
+					/>
+					<meta property="og:image" content="/images/profile.png" />
+			</Head>
       <Layout className='flex flex-col gap-10 my-10 lg:flex-row lg:justify-between lg:items-center lg:my-0'>
 
 				<Fade className='lg:flex-1 lg:max-w-md'>

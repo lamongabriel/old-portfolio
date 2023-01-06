@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Box } from '../components/design/Box'
@@ -21,19 +22,34 @@ export default function NotFound () {
 	`
 
   return (
+		<>
+			<Head>
+				<title>404!</title>
 
-		<Layout className='flex justify-center items-center'>
-			<Box className='max-w-md w-full flex flex-col'>
-				<HeadingGradient className='text-2xl mx-auto w-fit'>
-					404.
-				</HeadingGradient>
-				<div onClick={() => router.back()} className={buttonClasses}>
-					Voltar
-				</div>
-				<Link href="/" className={buttonClasses}>
-					Home
-				</Link>
-			</Box>
-		</Layout>
+					<meta
+						name="description"
+						content="Não encontrado, por favor volte para a home."
+					/>
+
+					<meta property="og:title" content="404!" />
+					<meta
+						property="og:description"
+						content="Não encontrado, por favor volte para a home."
+					/>
+			</Head>
+			<Layout className='flex justify-center items-center'>
+				<Box className='max-w-md w-full flex flex-col'>
+					<HeadingGradient className='text-2xl mx-auto w-fit'>
+						404.
+					</HeadingGradient>
+					<div onClick={() => router.back()} className={buttonClasses}>
+						Voltar
+					</div>
+					<Link href="/" className={buttonClasses}>
+						Home
+					</Link>
+				</Box>
+			</Layout>
+		</>
   )
 }
