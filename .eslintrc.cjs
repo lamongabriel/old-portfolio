@@ -16,7 +16,8 @@ module.exports = {
         '@typescript-eslint/no-floating-promises': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/consistent-type-assertions': 'off',
-        'no-tabs': 'off'
+        'no-tabs': 'off',
+        'no-mixed-spaces-and-tabs': 'off'
       }
     }
   ],
