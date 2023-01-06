@@ -6,6 +6,10 @@ html {
 	scroll-behavior: smooth;
 }
 
+body {
+	background-color: #151515;
+}
+
 @media(max-width: 1080px){
   html {
     font-size: 93.75%;
