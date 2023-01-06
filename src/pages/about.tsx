@@ -15,7 +15,9 @@ import {
   FaCss3,
   FaJsSquare,
   FaHeart,
-  FaGithub
+  FaGithub,
+  FaLinkedin,
+  FaInstagram
 } from 'react-icons/fa'
 
 import { Slide, Fade } from 'react-awesome-reveal'
@@ -41,7 +43,7 @@ export default function About () {
 									Prazer,<br/> Gabriel Lamon Lopes.
 								</Heading>
 								<Text>
-									Nascido em 2002, na cidade de Volta Redonda - RJ, sou o filho mais novo de três. E desde pequeno possuo um interesse acima da média por tecnologia, aos 2 anos já tinha facilidade em brincar com os videogames que meu pai comprava para mim e a mexer no computador da família.
+									Nascido em 2002, na cidade de Volta Redonda - RJ, sou o filho mais novo de três. E desde pequeno possuo um interesse acima da média por tecnologia, aos 2 anos já tinha facilidade em brincar com os videogames e mexer no computador da família.
 								</Text>
 
 								<Text>
@@ -52,14 +54,18 @@ export default function About () {
 									Vou te contar um pouco da minha história
 								</Heading>
 
-								<div className='mt-4 flex justify-center animate-bounce'><FaArrowDown size={16} color='white' /></div>
+								<div className='mt-4 flex justify-center animate-bounce'>
+									<a href='#me-2012'>
+										<FaArrowDown size={16} color='white' />
+									</a>
+								</div>
 
 							</div>
 						</div>
 					</Fade>
 				</section>
 
-				<section className='my-10'>
+				<section className='my-10' id='me-2012'>
 					<Fade triggerOnce>
 						<HeadingGradient className='text-3xl'>2012</HeadingGradient>
 						<Text>
@@ -72,14 +78,16 @@ export default function About () {
 					</Fade>
 				</section>
 
-				<section className='my-10'>
+				<section className='my-10' id='me-2017'>
 					<Fade className='lg:text-right' triggerOnce>
 						<HeadingGradient className='text-3xl mb-4'>2017</HeadingGradient>
 						<div className='lg:flex lg:items-center lg:justify-between lg:gap-10'>
 							<Image className='rounded-lg lg:order-2 mx-auto' src={plc} alt='Programming PLC'/>
 							<div className='lg:order-1 lg:max-w-2xl'>
 								<Heading className='text-2xl mt-10'>
-									IFRJ - 8º colocado.
+									<a href='https://portal.ifrj.edu.br/volta-redonda' className='underline'>
+										IFRJ - 8º colocado.
+									</a>
 								</Heading>
 								<Text>
 									Após um período de estudos, aos 15 anos, meu interesse em programação se tornou profissão e certificação, ao ingressar no Instituto Federal de Educação, Ciência e Tecnologia do Rio de Janeiro, o IFRJ. Cursando automação industrial obtive o meu primeiro contato com programação para indústrias, desenvolvi para <span className='text-lg-primary-green'>CLP em ladder</span>, desenvolvi <span className='text-lg-primary-green'>sistemas digitais de controle distribuído</span> e desenvolvi em Python e Arduíno.
@@ -89,7 +97,7 @@ export default function About () {
 					</Fade>
 				</section>
 
-				<section className='my-10'>
+				<section className='my-10' id='me-2018'>
 					<Fade triggerOnce>
 						<HeadingGradient className='text-3xl mb-4'>2018</HeadingGradient>
 						<div className='lg:flex lg:items-center lg:justify-between lg:gap-10'>
@@ -106,7 +114,7 @@ export default function About () {
 					</Fade>
 				</section>
 
-				<section className='my-10'>
+				<section className='my-10' id='me-2020'>
 					<Slide triggerOnce direction='right'>
 						<HeadingGradient className='text-3xl mb-4'>2020</HeadingGradient>
 						<Box>
@@ -119,13 +127,13 @@ export default function About () {
 								Primeira oportunidade com programação
 							</HeadingGradient>
 							<Text>
-							Logo após, com 18 anos, recebi minha primeira proposta de estágio, onde trabalharia e desenvolveria aplicações front-end com HTML5, CSS3 E JavaScript, principalmente para a plataforma VTEX.
+								Logo após, com 18 anos, recebi minha primeira proposta de estágio, onde trabalharia e desenvolveria aplicações front-end com HTML5, CSS3 E JavaScript, principalmente para a plataforma VTEX.
 							</Text>
 							<HeadingGradient className='text-base tracking-wider'>
 								Efetivação
 							</HeadingGradient>
 							<Text>
-								Após 8 meses, recebi a proposta da mesma empresa para trabalhar como freelancer e assim fiquei por quase 1 ano e meio. Nesse período desenvolvi para diversos sites, principalmente para o projeto <span className='text-lg-primary-green'>Fashion Masks</span>, aonde fui um dos líderes de desenvolvimento, criando diversas páginas, features e integrações. Logo após desenvolvemos para o e-commerce <span className='text-lg-primary-green'>Forever Liss</span> e <span className='text-lg-primary-green' >Hope Lingerie</span>.
+								Após 8 meses, recebi a proposta da mesma empresa para trabalhar como freelancer e assim fiquei por quase 1 ano e meio. Nesse período desenvolvi para diversos sites, principalmente para o projeto <a href='https://www.cnnbrasil.com.br/business/startup-de-mascaras-fashion-masks-fatura-r-16-milhoes-mas-e-o-pos-pandemia/' className='text-lg-primary-green underline'>Fashion Masks</a>, aonde fui um dos líderes de desenvolvimento, criando diversas páginas, features e integrações. Logo após desenvolvemos para o e-commerce <a href='https://www.foreverliss.com.br/' className='text-lg-primary-green underline'>Forever Liss</a> e <a href='https://hopelingerie.com.br/' className='text-lg-primary-green underline'>Hope Lingerie</a>.
 							</Text>
 						</Box>
 					</Slide>
@@ -133,7 +141,7 @@ export default function About () {
 
 				<div className='my-10 flex justify-center animate-bounce'><FaArrowDown size={16} color='white' /></div>
 
-				<section className='my-10'>
+				<section className='my-10' id='me-2020-2'>
 					<Slide triggerOnce direction='left'>
 						<Box>
 							<div className='flex justify-center items-center my-4 gap-4'>
@@ -156,7 +164,7 @@ export default function About () {
 					</Slide>
 				</section>
 
-				<section className='my-10'>
+				<section className='my-10' id='me-2021'>
 					<Fade className='lg:text-right' triggerOnce>
 						<HeadingGradient className='text-3xl mb-4'>2021</HeadingGradient>
 						<div className='lg:flex lg:items-center lg:justify-between lg:gap-10'>
@@ -192,6 +200,20 @@ export default function About () {
 							</Text>
 						</Box>
 					</Slide>
+				</section>
+
+				<section className='my-10'>
+				<div className='mt-4 flex gap-4 justify-center'>
+					<a href="https://github.com/lamongabriel">
+						<FaGithub size={32} color='white' />
+					</a>
+					<a href='https://www.linkedin.com/in/lamongabriel/'>
+						<FaLinkedin size={32} color='white' />
+					</a>
+					<a href='https://www.instagram.com/lamongabriel/'>
+						<FaInstagram size={32} color='white' />
+					</a>
+				</div>
 				</section>
 			</article>
 		</Layout>
