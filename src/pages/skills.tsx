@@ -12,7 +12,7 @@ import { Chart } from '../components/Chart'
 
 export default function Skills () {
   const hoverCardClasses = `
-
+		block
 		transition
 		shadow-black
 		shadow-lg
@@ -50,30 +50,48 @@ export default function Skills () {
 				<Tab title='Front-end'>
 					<section className='flex gap-4 lg:gap-6 flex-wrap items-center'>
 						{feTech.map((el, index) => (
-							<div key={index} className={`${hoverCardClasses} ${el.border ? 'border-[1px] border-lg-primary-green' : ''}`}>
+							<a
+								title={el.text}
+								key={index}
+								href={el.link}
+								target='_blank'
+								className={`${hoverCardClasses} ${el.border ? 'border-[1px] border-lg-primary-green' : ''}`}
+							>
 								{<el.icon className='text-5xl md:text-7xl' style={{ fill: 'url(#blue-gradient)' }} />}
 								<Text className='font-bold text-center'>{el.text}</Text>
-							</div>
+							</a>
 						))}
 					</section>
 				</Tab>
 				<Tab title='Back-end'>
 					<section className='flex gap-4 lg:gap-6 flex-wrap items-center'>
 						{beTech.map((el, index) => (
-							<div key={index} title={el.text} className={`${hoverCardClasses}`}>
+							<a
+								title={el.text}
+								key={index}
+								href={el.link}
+								target='_blank'
+								className={`${hoverCardClasses}`}
+							>
 								{<el.icon className='text-5xl md:text-7xl' style={{ fill: 'url(#blue-gradient)' }} />}
 								<Text className='font-bold text-center'>{el.text}</Text>
-							</div>
+							</a>
 						))}
 					</section>
 				</Tab>
 				<Tab title='Ferramentas'>
 					<section className='flex gap-4 lg:gap-6 flex-wrap items-center'>
 						{tools.map((el, index) => (
-							<div key={index} title={el.text} className={`${hoverCardClasses}`}>
+							<a
+								title={el.text}
+								key={index}
+								href={el.link}
+								target='_blank'
+								className={`${hoverCardClasses}`}
+							>
 								{<el.icon className='text-5xl md:text-7xl' style={{ fill: 'url(#blue-gradient)' }} />}
 								<Text className='font-bold text-center'>{el.text}</Text>
-							</div>
+							</a>
 						))}
 					</section>
 				</Tab>
