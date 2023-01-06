@@ -5,6 +5,7 @@ import { ProjectCard } from '../components/ProjectCard'
 
 import straightNotes from '../assets/projects/straight-notes.png'
 import spacetraveling from '../assets/projects/spacetraveling-blog.png'
+import ignews from '../assets/projects/ignews.png'
 
 export default function Projects () {
   return (
@@ -13,9 +14,9 @@ export default function Projects () {
 				Projetos
 			</HeadingGradient>
 			<Text>
-				Alguns dos projetos que já desenvolvi.
+				Alguns dos projetos que desenvolvi. Amo a prática, é a melhor forma de desenvolver novas habilidades e aprender novas ferramentas.
 			</Text>
-			<section className='my-10 flex flex-col md:flex-row gap-6 items-center justify-center'>
+			<section className='my-10 flex flex-col lg:flex-row gap-6 justify-center items-stretch'>
 				<ProjectCard
 					title='Straight Notes'
 					image={straightNotes}
@@ -33,6 +34,14 @@ export default function Projects () {
 				>
 					Blog de notícias do mundo tecnológico, criado com Static Site Generation e
 					Prismic CMS para criação de novos artigos.
+				</ProjectCard>
+				<ProjectCard
+					title='ig.news'
+					image={ignews}
+					github='https://github.com/lamongabriel/ignews'
+				>
+					Blog com sistema de matérias por assinatura, onde o usuário deve pagar para consumir o conteúdo.
+					Feito utilizando NextJS, SSG, FaunaDB e a API de pagamentos Stripe.
 				</ProjectCard>
 			</section>
 		</Layout>

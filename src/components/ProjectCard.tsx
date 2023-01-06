@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
 import Image, { StaticImageData } from 'next/image'
-import { Box } from './design/Box'
 import { Heading } from './design/Heading'
 import { Text } from './design/Text'
 import { FaGithub, FaLink } from 'react-icons/fa'
@@ -15,13 +14,13 @@ interface ProjectCardProps {
 
 export function ProjectCard ({ title, image, children, github, link }: ProjectCardProps) {
   return (
-		<div className='md:max-w-md flex flex-col'>
-			<Heading className='text-2xl mb-4 text-center'>
-				{title}
-			</Heading>
-			<Box className='flex-1'>
-				<Image src={image} alt={title} className='' />
-				<Text>
+		<div className='md:max-w-md flex flex-col rounded-lg overflow-hidden mx-auto'>
+			<Image src={image} alt={title} />
+			<div className='bg-lg-gray-500 p-10 flex-1 flex flex-col'>
+				<Heading>
+					{title}
+				</Heading>
+				<Text className='flex-1'>
 					{ children }
 				</Text>
 				<div className='flex mt-4 gap-4'>
@@ -36,7 +35,7 @@ export function ProjectCard ({ title, image, children, github, link }: ProjectCa
 						</a>
 					)}
 				</div>
-			</Box>
+			</div>
 	</div>
   )
 }
