@@ -49,7 +49,7 @@ export function Tabs ({ children }: TabsProps) {
 
   return (
 		<div className='my-6'>
-			<div className='flex gap-4' role="tablist" aria-orientation="horizontal">
+			<div className='flex sm:gap-4 flex-col justify-start sm:flex-row mb-6' role="tablist" aria-orientation="horizontal">
 				{tabs.map((tab, index) => {
 				  const active = index === activeTab
 				  return (

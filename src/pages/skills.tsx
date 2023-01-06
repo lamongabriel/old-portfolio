@@ -11,7 +11,7 @@ import { tools } from '../utils/tools'
 
 export default function Skills () {
   const hoverCardClasses = `
-		hover:scale-110
+
 		transition
 		shadow-black
 		shadow-lg
@@ -19,10 +19,15 @@ export default function Skills () {
 		items-center
 		flex-col
 		justify-center
-		w-[12rem]
 		aspect-square
 		p-4
-		mx-auto
+
+		w-[calc(50%_-_0.50rem)]
+
+		sm:w-[calc(33%_-_0.53rem)]
+
+		lg:w-[calc(20%_-_1.2rem)]
+		lg:hover:scale-110
 	`
 
   return (
@@ -41,30 +46,30 @@ export default function Skills () {
 			</Text>
 			<Tabs>
 				<Tab title='Front-end'>
-					<section className='flex gap-6 flex-wrap items-center'>
+					<section className='flex gap-4 lg:gap-6 flex-wrap items-center'>
 						{feTech.map((el, index) => (
 							<div key={index} className={`${hoverCardClasses} ${el.border ? 'border-[1px] border-lg-primary-green' : ''}`}>
-								{<el.icon size={64} style={{ fill: 'url(#blue-gradient)' }} />}
+								{<el.icon className='text-5xl md:text-7xl' style={{ fill: 'url(#blue-gradient)' }} />}
 								<Text className='font-bold text-center'>{el.text}</Text>
 							</div>
 						))}
 					</section>
 				</Tab>
 				<Tab title='Back-end'>
-					<section className='flex gap-6 flex-wrap items-center'>
+					<section className='flex gap-4 lg:gap-6 flex-wrap items-center'>
 						{beTech.map((el, index) => (
 							<div key={index} title={el.text} className={`${hoverCardClasses}`}>
-								{<el.icon size={64} style={{ fill: 'url(#blue-gradient)' }} />}
+								{<el.icon className='text-5xl md:text-7xl' style={{ fill: 'url(#blue-gradient)' }} />}
 								<Text className='font-bold text-center'>{el.text}</Text>
 							</div>
 						))}
 					</section>
 				</Tab>
 				<Tab title='Ferramentas'>
-					<section className='flex gap-6 flex-wrap items-center'>
+					<section className='flex gap-4 lg:gap-6 flex-wrap items-center'>
 						{tools.map((el, index) => (
 							<div key={index} title={el.text} className={`${hoverCardClasses}`}>
-								{<el.icon size={64} style={{ fill: 'url(#blue-gradient)' }} />}
+								{<el.icon className='text-5xl md:text-7xl' style={{ fill: 'url(#blue-gradient)' }} />}
 								<Text className='font-bold text-center'>{el.text}</Text>
 							</div>
 						))}

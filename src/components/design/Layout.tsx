@@ -8,7 +8,7 @@ interface LayoutProps {
 }
 
 export function Layout ({ children, className, ...rest }: LayoutProps) {
-  const classes = twMerge(`min-h-[calc(100vh_-_4rem)] w-full max-w-[1280px] px-4 mx-auto ${className ?? ''}`)
+  const classes = twMerge(`min-h-[calc(100vh_-_4rem)] w-full max-w-[1280px] py-6 lg:py-10 px-4 mx-auto ${className ?? ''}`)
 
   return (
     <>
