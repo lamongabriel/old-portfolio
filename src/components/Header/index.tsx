@@ -8,7 +8,8 @@ import styles from './styles.module.css'
 const menuItems = [
   { label: 'Home', path: '/' },
   { label: 'Sobre', path: '/about' },
-  { label: 'Skills', path: '/skills' }
+  { label: 'Skills', path: '/skills' },
+  { label: 'Projetos', path: '/projects' }
 ]
 
 export function Header () {

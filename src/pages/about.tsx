@@ -174,7 +174,7 @@ export default function About () {
 									Universidade e projetos.
 								</Heading>
 								<Text>
-									Hoje estou cursando <span className='text-lg-primary-green'>Sistemas de Informação</span> na UniFOA - University Center of Volta Redonda, E estou conciliando trabalhos, estudos e projetos. Meu tempo livre é utilizado com família e criação de novos projetos.
+									Hoje estou cursando <span className='text-lg-primary-green'>Sistemas de Informação</span> na UniFOA - Centro Univeritário de Volta Redonda, E estou conciliando trabalhos, estudos e projetos. Meu tempo livre é utilizado com família e criação de novos projetos.
 								</Text>
 								<Text className='lg:text-right'>
 									Que tal dar uma olhada nos meus projetos?
