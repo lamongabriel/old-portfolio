@@ -12,3 +12,24 @@
     font-size: 87.5%;
   }
 }
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #121214;
+}
+
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: #333;
+}
+
+body, html {
+	scrollbar-width: thin;
+	scrollbar-color: #333 #121214;
+}
+
