@@ -45,7 +45,7 @@ export default function Home () {
 						/>
 
 						<Heading className='text-lg'>Olá, eu sou</Heading>
-						<HeadingGradient >{'<lamongabriel/>'}</HeadingGradient>
+						<HeadingGradient className='m-0'>{'<lamongabriel/>'}</HeadingGradient>
 
 						<Text className='mt-10 leading-relaxed'>
 							Front-end engineer com 2+ anos de experiência, em constante evolução. Desenvolvo aplicações com foco em desempenho, estabilidade, segurança e estética.
