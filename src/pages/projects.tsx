@@ -55,6 +55,7 @@ export default function Projects () {
 					<ProjectCard
 						title='ig.news'
 						image={ignews}
+						link='https://ignews-lamongabriel.vercel.app/'
 						github='https://github.com/lamongabriel/ignews'
 					>
 						Blog com sistema de matérias por assinatura, onde o usuário deve pagar para consumir o conteúdo.
