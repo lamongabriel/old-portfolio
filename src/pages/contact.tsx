@@ -1,16 +1,39 @@
+import { useForm, SubmitHandler } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
+
+import { FaGithub, FaWhatsapp, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa'
+
 import { Zoom } from 'react-awesome-reveal'
 import { Box } from '../components/design/Box'
 import { Heading } from '../components/design/Heading'
 import { HeadingGradient } from '../components/design/HeadingGradient'
 import { Layout } from '../components/design/Layout'
 import { Text } from '../components/design/Text'
-import Input from '../components/Form/Input'
-import Textarea from '../components/Form/Textarea'
-
-import { FaGithub, FaWhatsapp, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa'
+import { Input } from '../components/Form/Input'
+import { Textarea } from '../components/Form/Textarea'
 import Button from '../components/design/Button'
 
+interface FormData {
+  name: string
+  email: string
+  subject: string
+  body: string
+}
+
+const contactMeFormSchema = yup.object().shape({
+  name: yup.string().required('Campo obrigatório.'),
+  email: yup.string().required('Campo obrigatório.').email('E-mail inválido.'),
+  subject: yup.string().required('Campo obrigatório.'),
+  body: yup.string().required('Campo obrigatório.')
+})
+
 export default function Contact () {
+  const { register, handleSubmit, formState } = useForm<FormData>({
+    resolver: yupResolver(contactMeFormSchema)
+  })
+  const onSubmit: SubmitHandler<FormData> = data => console.log(data)
+
   return (
 		<Layout>
 			<HeadingGradient>
@@ -51,37 +74,41 @@ export default function Contact () {
 							ou, me mande um e-mail.
 						</div>
 					</Heading>
-					<form>
+					<form onSubmit={handleSubmit(onSubmit)}>
 						<div className='lg:flex lg:gap-4'>
 							<Input
-								title='Nome'
+								label='Nome'
 								id='name'
 								type='text'
-								name='name'
 								autoComplete='name'
 								className='flex-1'
+								errors={formState.errors.name}
+								{...register('name')}
 							/>
 							<Input
-								title='E-mail'
+								label='E-mail'
 								id='email'
 								type='email'
-								name='email'
 								autoComplete='email'
 								className='flex-1'
+								errors={formState.errors.email}
+								{...register('email')}
 							/>
 						</div>
 						<Input
-							title='Assunto'
+							label='Assunto'
 							id='subject'
 							type='text'
-							name='subject'
 							autoComplete='off'
+							errors={formState.errors.subject}
+							{...register('subject')}
 						/>
 						<Textarea
-							title='Mensagem'
+							label='Mensagem'
 							id='body'
-							name='body'
 							autoComplete='off'
+							errors={formState.errors.body}
+							{...register('body')}
 						/>
 						<Button
 							type='submit'
