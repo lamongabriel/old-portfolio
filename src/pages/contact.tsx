@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 
 import { useForm, SubmitHandler } from 'react-hook-form'
@@ -17,6 +17,7 @@ import { Text } from '../components/design/Text'
 import { Input } from '../components/Form/Input'
 import { Textarea } from '../components/Form/Textarea'
 import Button from '../components/design/Button'
+import { toast } from 'react-toastify'
 
 import { sendContactForm } from '../lib/api'
 import { ContactFormData } from '../@types/form'
@@ -29,12 +30,38 @@ const contactMeFormSchema = yup.object().shape({
 })
 
 export default function Contact () {
+  const initObserver = () => {
+    const recaptchaWindow = [
+      ...document.getElementsByTagName('iframe')
+    ]?.find((x) => x.src.includes('google.com/recaptcha/api2/bframe'))
+      ?.parentNode?.parentNode as HTMLDivElement
+    if (recaptchaWindow) {
+      new MutationObserver(() => {
+        if (
+          recaptchaWindow.style.visibility !== 'visible' ||
+        recaptchaWindow.style.opacity !== '1' ||
+        recaptchaWindow.style.top !== '10px'
+        ) {
+          // If changed, put back on default values.
+          recaptchaWindow.style.opacity = '1'
+          recaptchaWindow.style.visibility = 'visible'
+          recaptchaWindow.style.top = '10px'
+        }
+      }).observe(recaptchaWindow, {
+        attributeFilter: ['style']
+      })
+    }
+  }
+
+  const [isLoading, setIsLoading] = useState(false)
   const reRef = useRef<ReCAPTCHA>(null)
   const { register, handleSubmit, formState, reset } = useForm<ContactFormData>({
     resolver: yupResolver(contactMeFormSchema)
   })
   const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
+    setIsLoading(true)
     try {
+      initObserver()
       const token = await reRef.current?.executeAsync()
       reRef.current?.reset()
 
@@ -43,10 +70,13 @@ export default function Contact () {
       }
 
       await sendContactForm({ ...data, token })
-    } catch (error) {
-      console.log(error)
-    } finally {
+
       reset()
+      toast.success('E-mail enviado! obrigado.')
+    } catch (error) {
+      toast.success('Não conseguimos enviar seu e-mail, tente novamente.')
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -106,7 +136,7 @@ export default function Contact () {
 								ou, me mande um e-mail.
 							</div>
 						</Heading>
-						<form onSubmit={handleSubmit(onSubmit)}>
+						<form onSubmit={handleSubmit(onSubmit)} className={isLoading ? 'blur-sm pointer-events-none' : ''}>
 							<div className='lg:flex lg:gap-4'>
 								<Input
 									label='Nome'
