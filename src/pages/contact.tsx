@@ -1,3 +1,6 @@
+import ReCAPTCHA from 'react-google-recaptcha'
+import { useRef } from 'react'
+
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
@@ -25,11 +28,25 @@ const contactMeFormSchema = yup.object().shape({
 })
 
 export default function Contact () {
-  const { register, handleSubmit, formState } = useForm<ContactFormData>({
+  const reRef = useRef<ReCAPTCHA>(null)
+  const { register, handleSubmit, formState, reset } = useForm<ContactFormData>({
     resolver: yupResolver(contactMeFormSchema)
   })
   const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
-    await sendContactForm(data)
+    try {
+      const token = await reRef.current?.executeAsync()
+      reRef.current?.reset()
+
+      if (!token) {
+        throw new Error('No token was provided.')
+      }
+
+      await sendContactForm({ ...data, token })
+    } catch (error) {
+      console.log(error)
+    } finally {
+      reset()
+    }
   }
 
   return (
@@ -107,6 +124,11 @@ export default function Contact () {
 							autoComplete='off'
 							errors={formState.errors.body}
 							{...register('body')}
+						/>
+						<ReCAPTCHA
+							sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE as string}
+							size="invisible"
+							ref={reRef}
 						/>
 						<Button
 							type='submit'

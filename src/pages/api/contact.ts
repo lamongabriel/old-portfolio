@@ -1,13 +1,27 @@
+import axios from 'axios'
+
 import { NextApiRequest, NextApiResponse } from 'next'
-import { ContactFormData } from '../../@types/form'
+import { ContactFormDataValidation } from '../../@types/form'
 import { mailOptions, transport } from '../../config/nodemailer'
+
+async function validateHuman (token: string): Promise<boolean> {
+  const secret = process.env.RECAPTCHA_API as string
+  const { data } = await axios.post(`https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`)
+
+  return data.success
+}
 
 export default async function handler (req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
-    const data = req.body as ContactFormData
+    const data = req.body as ContactFormDataValidation
 
     if (!data.name || !data.email || !data.subject || !data.body) {
       return res.status(400).json({ message: 'Missing fields.' })
+    }
+
+    const human = await validateHuman(data.token)
+    if (!human) {
+      return res.status(400).json({ message: 'Invalid, bot detected.' })
     }
 
     const messageText = `E-mail: ${data.email}\nName: ${data.name}\n\nMessage: ${data.body}`

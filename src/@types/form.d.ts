@@ -4,3 +4,7 @@ export interface ContactFormData {
   subject: string
   body: string
 }
+
+export interface ContactFormDataValidation extends ContactFormData {
+  token: string
+}
