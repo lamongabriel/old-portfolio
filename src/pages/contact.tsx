@@ -14,12 +14,8 @@ import { Input } from '../components/Form/Input'
 import { Textarea } from '../components/Form/Textarea'
 import Button from '../components/design/Button'
 
-interface FormData {
-  name: string
-  email: string
-  subject: string
-  body: string
-}
+import { sendContactForm } from '../lib/api'
+import { ContactFormData } from '../@types/form'
 
 const contactMeFormSchema = yup.object().shape({
   name: yup.string().required('Campo obrigatório.'),
@@ -29,10 +25,12 @@ const contactMeFormSchema = yup.object().shape({
 })
 
 export default function Contact () {
-  const { register, handleSubmit, formState } = useForm<FormData>({
+  const { register, handleSubmit, formState } = useForm<ContactFormData>({
     resolver: yupResolver(contactMeFormSchema)
   })
-  const onSubmit: SubmitHandler<FormData> = data => console.log(data)
+  const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
+    await sendContactForm(data)
+  }
 
   return (
 		<Layout>
