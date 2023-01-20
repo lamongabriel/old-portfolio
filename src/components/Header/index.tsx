@@ -9,7 +9,8 @@ const menuItems = [
   { label: 'Home', path: '/' },
   { label: 'Sobre', path: '/about' },
   { label: 'Skills', path: '/skills' },
-  { label: 'Projetos', path: '/projects' }
+  { label: 'Projetos', path: '/projects' },
+  { label: 'Contato', path: '/contact' }
 ]
 
 export function Header () {

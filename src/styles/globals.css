@@ -39,5 +39,6 @@ body {
 body, html {
 	scrollbar-width: thin;
 	scrollbar-color: #333 #121214;
+	overflow-y: scroll;
 }
 
