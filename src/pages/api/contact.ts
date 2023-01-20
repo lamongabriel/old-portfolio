@@ -10,12 +10,13 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
       return res.status(400).json({ message: 'Missing fields.' })
     }
 
+    const messageText = `E-mail: ${data.email}\nName: ${data.name}\n\nMessage: ${data.body}`
+
     try {
       await transport.sendMail({
         ...mailOptions,
         subject: data.subject,
-        text: data.body,
-        html: '<h1>Test title</h1><p>Some text</p>'
+        text: messageText
       })
 
       return res.status(200).json({ message: 'Ok' })
