@@ -9,7 +9,7 @@ import profile from '../assets/profile.png'
 
 import { Fade, Slide } from 'react-awesome-reveal'
 
-import { FaReact, FaJsSquare, FaNodeJs, FaWhatsapp, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { FaReact, FaJsSquare, FaNodeJs, FaWhatsapp, FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa'
 import Head from 'next/head'
 
 export default function Home () {
@@ -71,13 +71,21 @@ export default function Home () {
 					<section className="flex flex-col gap-4">
 						<Box>
 							<HeadingGradient className='text-3xl'>
-								Construindo soluções.
+								Desenvolvo aplicações de ponta.
 							</HeadingGradient>
 							<Text>
-								Com uma stack moderna, escalável e de fácil manutenção, desenvolvo diversos tipos de aplicações web, responsivas e acessíveis.
+								Atuando na área desde 2020, busco a melhor solução para sua empresa.
 							</Text>
 							<Text>
-								Tecnologia é minha forma de mudar o mundo, e utilizo React JS + Node JS como intermédio. Meu objetivo é facilitar a vidas das pessoas construindo soluções simples para problemas complexos.
+								Desenvolvi e realizei manutenção no projeto Fashion Masks, onde foi gerado mais de R$1.000.000 de renda para costureiras na pandemia.
+							</Text>
+							<Text>
+								<ul className='flex gap-4 text-lg-primary-green font-bold'>
+									<li>React JS</li>
+									<li>Next JS / SSG</li>
+									<li>TypeScript</li>
+									<li>Node JS</li>
+								</ul>
 							</Text>
 						</Box>
 						<Box>
@@ -87,6 +95,9 @@ export default function Home () {
 							<Text>
 								Confira meu trabalho e entre em contato comigo.
 							</Text>
+							<div className='flex gap-2 mt-4 items-center'>
+								<FaPhone /> <a href='tel:5524999457654'>+55 (24) 99945-7654</a>
+							</div>
 							<div className='mt-4 flex gap-4'>
 								<a href="https://github.com/lamongabriel">
 									<FaGithub size={32} color='white' />
