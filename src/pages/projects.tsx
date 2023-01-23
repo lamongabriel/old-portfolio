@@ -38,7 +38,7 @@ export default function Projects () {
 						title='Straight Notes'
 						image={straightNotes}
 						github='https://github.com/lamongabriel/straight-notes'
-						link='https://straight-notes-production.up.railway.app/'
+						link='https://straight-notes-lamongabriel.vercel.app/'
 					>
 						App para criação e armazenamento de notas. Com sistema de login suas notas ficarão
 						seguras na nuvem onde é possível acessar somente com uma conexão de internet.
