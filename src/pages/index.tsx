@@ -1,16 +1,30 @@
+import Image from 'next/image'
+import Head from 'next/head'
+
 import { Box } from '../components/design/Box'
 import { Heading } from '../components/design/Heading'
 import { HeadingGradient } from '../components/design/HeadingGradient'
 import { Layout } from '../components/design/Layout'
 import { Text } from '../components/design/Text'
-
-import Image from 'next/image'
-import profile from '../assets/profile.png'
-
 import { Fade, Slide } from 'react-awesome-reveal'
 
-import { FaReact, FaJsSquare, FaNodeJs, FaWhatsapp, FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa'
-import Head from 'next/head'
+import profile from '../assets/profile.png'
+
+import hope from '../assets/logos/logo-hope.png'
+import fashly from '../assets/logos/logo-fashion-masks.png'
+import foreverliss from '../assets/logos/logo-forever-liss.png'
+import aquamar from '../assets/logos/logo-aquamar.png'
+
+import {
+  FaReact,
+  FaJsSquare,
+  FaNodeJs,
+  FaWhatsapp,
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaPhoneAlt
+} from 'react-icons/fa'
 
 export default function Home () {
   return (
@@ -47,8 +61,23 @@ export default function Home () {
 						<Heading className='text-lg'>Olá, eu sou</Heading>
 						<HeadingGradient className='m-0'>{'<lamongabriel/>'}</HeadingGradient>
 
-						<Text className='mt-10 leading-relaxed'>
-							Front-end engineer com 2+ anos de experiência, em constante evolução. Desenvolvo aplicações com foco em desempenho, estabilidade, segurança e estética.
+						<div className='flex gap-4 items-center justify-center flex-wrap'>
+							<div className='max-w-1/2 flex-1'>
+								<Image src={fashly} alt='Logo Fashly'/>
+							</div>
+							<div className='max-w-1/2 flex-1'>
+								<Image src={aquamar} alt='Logo Aquamar'/>
+							</div>
+							<div className='max-w-1/2 flex-1'>
+								<Image src={hope} alt='Logo Hope'/>
+							</div>
+							<div className='max-w-1/2 flex-1'>
+								<Image src={foreverliss} alt='Logo Forever Liss'/>
+							</div>
+						</div>
+
+						<Text className='leading-relaxed'>
+							Especialista front-end com 2+ anos de experiência, em constante evolução. Desenvolvo aplicações com foco em desempenho, estabilidade, segurança e estética.
 						</Text>
 
 						<svg width="0" height="0">
@@ -77,26 +106,24 @@ export default function Home () {
 								Atuando na área desde 2020, busco a melhor solução para sua empresa.
 							</Text>
 							<Text>
-								Desenvolvi e realizei manutenção no projeto Fashion Masks, onde foi gerado mais de R$1.000.000 de renda para costureiras na pandemia.
+								Construí features para gigantes: Hope Lingerie, Forever Liss e Aquamar.
 							</Text>
 							<Text>
-								<ul className='flex gap-4 text-lg-primary-green font-bold'>
-									<li>React JS</li>
-									<li>Next JS / SSG</li>
-									<li>TypeScript</li>
-									<li>Node JS</li>
-								</ul>
+								Desenvolvi e realizei manutenção no projeto Fashion Masks, onde foi gerado mais de R$1.000.000 de renda para costureiras na pandemia.
 							</Text>
+							<ul className='flex gap-4 text-lg-primary-green font-bold mt-4'>
+								<li>React JS</li>
+								<li>Next JS / SSG</li>
+								<li>TypeScript</li>
+								<li>Node JS</li>
+							</ul>
 						</Box>
 						<Box>
 							<HeadingGradient className='text-3xl'>
-								Open to work.
+								Entre em contato comigo.
 							</HeadingGradient>
-							<Text>
-								Confira meu trabalho e entre em contato comigo.
-							</Text>
 							<div className='flex gap-2 mt-4 items-center'>
-								<FaPhone /> <a href='tel:5524999457654'>+55 (24) 99945-7654</a>
+								<FaPhoneAlt /> <a href='tel:5524999457654'>+55 (24) 99945-7654</a>
 							</div>
 							<div className='mt-4 flex gap-4'>
 								<a href="https://github.com/lamongabriel">
