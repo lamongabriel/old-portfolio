@@ -73,7 +73,7 @@ export default function About () {
 									</Text>
 
 									<Text>
-										Hoje, sou especialista front-end focado em React JS e Next JS, também desenvolvo aplicações back-end com Node JS.
+										Hoje, sou front-end focado em React JS e Next JS, também desenvolvo aplicações back-end com Node JS.
 									</Text>
 
 									<Text>

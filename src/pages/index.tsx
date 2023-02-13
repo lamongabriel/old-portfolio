@@ -77,7 +77,7 @@ export default function Home () {
 						</div>
 
 						<Text className='leading-relaxed'>
-							Especialista front-end com 2+ anos de experiência, em constante evolução. Desenvolvo aplicações com foco em desempenho, estabilidade, segurança e estética.
+							Desenvolvedor front-end com 2+ anos de experiência, em constante evolução. Desenvolvo aplicações com foco em desempenho, estabilidade, segurança e estética.
 						</Text>
 
 						<svg width="0" height="0">
@@ -100,7 +100,7 @@ export default function Home () {
 					<section className="flex flex-col gap-4">
 						<Box>
 							<HeadingGradient className='text-3xl'>
-								Desenvolvo aplicações de ponta.
+								Desenvolvo aplicações modernas.
 							</HeadingGradient>
 							<Text>
 								Atuando na área desde 2020, busco a melhor solução para sua empresa.
